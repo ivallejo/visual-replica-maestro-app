@@ -51,14 +51,16 @@ const Header = () => {
         <div className="fixed inset-0 z-50 lg:hidden">
           {/* Background overlay */}
           <div 
-            className="fixed inset-0 bg-black bg-opacity-50"
+            className="fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300"
             onClick={() => setIsMobileMenuOpen(false)}
           />
           
           {/* Sidebar */}
-          <div className="fixed left-0 top-0 h-full w-80 bg-white shadow-xl transform transition-transform duration-300 ease-in-out">
+          <div className={`fixed left-0 top-0 h-full w-80 bg-white shadow-xl transform transition-transform duration-300 ease-out ${
+            isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+          }`}>
             {/* Sidebar header */}
-            <div className="flex items-center justify-between p-4 border-b">
+            <div className="flex items-center justify-between p-6 border-b border-gray-200">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 bg-orange-500 rounded transform rotate-12 flex items-center justify-center">
                   <span className="text-white font-bold text-sm">🔥</span>
@@ -69,63 +71,67 @@ const Header = () => {
               </div>
               <button 
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="p-2 hover:bg-gray-100 rounded"
+                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
               >
-                <X className="w-5 h-5" />
+                <X className="w-5 h-5 text-gray-600" />
               </button>
             </div>
             
             {/* Navigation menu */}
-            <nav className="p-4">
-              <div className="flex flex-col gap-4">
+            <nav className="p-6">
+              <div className="flex flex-col space-y-1">
                 <a 
                   href="#" 
-                  className="text-gray-700 hover:text-orange-500 font-medium text-base py-2 border-b border-gray-100"
+                  className="text-gray-800 hover:text-orange-500 hover:bg-orange-50 font-medium text-lg py-3 px-4 rounded-lg transition-all duration-200 border-b border-gray-100"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   PRINCIPAL
                 </a>
                 <a 
                   href="#" 
-                  className="text-gray-700 hover:text-orange-500 font-medium text-base py-2 border-b border-gray-100"
+                  className="text-gray-800 hover:text-orange-500 hover:bg-orange-50 font-medium text-lg py-3 px-4 rounded-lg transition-all duration-200 border-b border-gray-100"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   NOTICIAS & CONTENIDO
                 </a>
                 <a 
                   href="#" 
-                  className="text-gray-700 hover:text-orange-500 font-medium text-base py-2 border-b border-gray-100"
+                  className="text-gray-800 hover:text-orange-500 hover:bg-orange-50 font-medium text-lg py-3 px-4 rounded-lg transition-all duration-200 border-b border-gray-100"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   EVENTOS
                 </a>
                 <a 
                   href="#" 
-                  className="text-gray-700 hover:text-orange-500 font-medium text-base py-2 border-b border-gray-100"
+                  className="text-gray-800 hover:text-orange-500 hover:bg-orange-50 font-medium text-lg py-3 px-4 rounded-lg transition-all duration-200 border-b border-gray-100"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   PODCAST
                 </a>
                 <a 
                   href="#" 
-                  className="text-gray-700 hover:text-orange-500 font-medium text-base py-2 border-b border-gray-100"
+                  className="text-gray-800 hover:text-orange-500 hover:bg-orange-50 font-medium text-lg py-3 px-4 rounded-lg transition-all duration-200 border-b border-gray-100"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   ENTREVISTAS
                 </a>
                 <a 
                   href="#" 
-                  className="text-gray-700 hover:text-orange-500 font-medium text-base py-2 border-b border-gray-100"
+                  className="text-gray-800 hover:text-orange-500 hover:bg-orange-50 font-medium text-lg py-3 px-4 rounded-lg transition-all duration-200 border-b border-gray-100"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   CONTACTO
                 </a>
+              </div>
                 
-                {/* Language buttons */}
-                <div className="flex gap-2 mt-4 pt-4 border-t border-gray-200">
-                  <button className="bg-teal-400 text-white px-4 py-2 rounded text-sm font-medium">POR</button>
-                  <button className="bg-blue-600 text-white px-4 py-2 rounded text-sm font-medium">ENG</button>
-                </div>
+              {/* Language buttons */}
+              <div className="flex gap-3 mt-8 pt-6 border-t border-gray-200">
+                <button className="bg-teal-400 hover:bg-teal-500 text-white px-6 py-3 rounded-lg text-sm font-medium transition-colors flex-1">
+                  POR
+                </button>
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-sm font-medium transition-colors flex-1">
+                  ENG
+                </button>
               </div>
             </nav>
           </div>
