@@ -3,11 +3,11 @@ const MainContent = () => {
   return (
     <div className="flex-1 space-y-6">
       {/* Blue banner */}
-      <div className="bg-gradient-to-r from-blue-400 to-blue-600 rounded-lg p-6 text-white relative overflow-hidden">
+      <div className="bg-gradient-to-r from-blue-400 to-blue-600 rounded-lg p-4 sm:p-6 text-white relative overflow-hidden">
         <div className="relative z-10">
           <div className="flex items-center gap-4 mb-4">
             <div className="bg-white rounded-full p-2">
-              <span className="text-blue-600 text-2xl">🍃</span>
+              <span className="text-blue-600 text-xl sm:text-2xl">🍃</span>
             </div>
             <div>
               <h3 className="text-sm font-bold">atemgroup</h3>
@@ -16,21 +16,21 @@ const MainContent = () => {
           </div>
         </div>
         <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
-          <div className="text-6xl">🎯</div>
+          <div className="text-4xl sm:text-6xl">🎯</div>
         </div>
       </div>
 
       {/* Orange banner */}
       <div className="bg-gradient-to-r from-orange-400 to-orange-600 rounded-lg p-4 text-white">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
             <h3 className="text-lg font-bold">LYNON</h3>
           </div>
-          <div className="text-right">
-            <div className="bg-black text-white px-2 py-1 rounded text-sm mb-2">
+          <div className="text-left sm:text-right">
+            <div className="bg-black text-white px-2 py-1 rounded text-sm mb-2 inline-block">
               📱 Bono retroactivo de hasta un 10%
             </div>
-            <div className="bg-white text-orange-600 px-3 py-1 rounded text-sm font-bold">
+            <div className="bg-white text-orange-600 px-3 py-1 rounded text-sm font-bold inline-block ml-0 sm:ml-2">
               ¡Haz te con el Tuyo Ahora!
             </div>
             <p className="text-xs mt-1">Código Exclusivo Como Regalo</p>
@@ -43,15 +43,15 @@ const MainContent = () => {
         <div className="bg-orange-500 text-white px-4 py-2">
           <span className="text-sm font-bold">EVENTOS</span>
         </div>
-        <div className="p-6 text-white">
-          <div className="flex items-center gap-6">
-            <div className="flex-1">
+        <div className="p-4 sm:p-6 text-white">
+          <div className="flex flex-col lg:flex-row items-center gap-6">
+            <div className="flex-1 text-center lg:text-left">
               <p className="text-sm mb-2">ENTREVISTA A:</p>
-              <h2 className="text-3xl font-bold mb-2">SLOBODAN GEORGIJEVSKI</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-2">SLOBODAN GEORGIJEVSKI</h2>
               <p className="text-sm mb-4">DIRECTOR DE VENTAS DE SOFT2BET</p>
               <p className="text-xs mb-4">EXCLUSIVO SOLOAZAR</p>
             </div>
-            <div className="w-48 h-48">
+            <div className="w-32 h-32 sm:w-48 sm:h-48 flex-shrink-0">
               <img 
                 src="/lovable-uploads/2640aa7b-6e01-4e4b-a4f7-7e89677aff16.png" 
                 alt="Slobodan Georgijevski" 
@@ -63,8 +63,8 @@ const MainContent = () => {
       </div>
 
       {/* Technology banner */}
-      <div className="bg-gradient-to-r from-blue-800 to-purple-800 rounded-lg p-6 text-white">
-        <h2 className="text-2xl font-bold mb-4">REDEFINIENDO LA INNOVACIÓN: TECNOLOGÍA</h2>
+      <div className="bg-gradient-to-r from-blue-800 to-purple-800 rounded-lg p-4 sm:p-6 text-white">
+        <h2 className="text-lg sm:text-2xl font-bold mb-4">REDEFINIENDO LA INNOVACIÓN: TECNOLOGÍA</h2>
       </div>
     </div>
   );
