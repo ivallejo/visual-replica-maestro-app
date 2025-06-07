@@ -6,7 +6,7 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white shadow-sm">
+    <header className="bg-white shadow-sm relative">
       <div className="max-w-7xl mx-auto px-4 py-4">
         {/* Main header content */}
         <div className="flex items-center justify-between">
@@ -37,7 +37,7 @@ const Header = () => {
             </div>
             {/* Mobile menu button */}
             <button 
-              className="lg:hidden p-2"
+              className="lg:hidden p-2 relative z-[60]"
               onClick={() => setIsMobileMenuOpen(true)}
             >
               <Menu className="w-5 h-5" />
@@ -46,9 +46,9 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile sidebar overlay */}
+      {/* Mobile sidebar overlay - Higher z-index to appear above everything */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-50 lg:hidden">
+        <div className="fixed inset-0 z-[100] lg:hidden">
           {/* Background overlay */}
           <div 
             className="fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300"
